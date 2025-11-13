@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="pageTitle">Support Ethan's Open Source Projects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+        padding: 20px;
+        margin: 0;
+        background-color: #f4f7f6;
+        color: #333;
+      }
+      .container {
+        max-width: 700px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        position: relative; /* For language toggle positioning */
+      }
+      .header {
+        display: flex;
+        justify-content: flex-end; /* Pushes content to the right */
+        width: 100%;
+        margin-bottom: 20px;
+        position: absolute; /* Position relative to .container */
+        top: 20px;
+        right: 20px;
+      }
+      .language-toggle {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+      }
+      .language-toggle:hover {
+        background-color: #0056b3;
+      }
+      h1 {
+        color: #2c3e50;
+        margin-top: 20px;
+        font-size: 2.5em;
+      }
+      p {
+        font-size: 1.1em;
+        line-height: 1.6;
+        color: #555;
+      }
+      hr {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0),
+          rgba(0, 0, 0, 0.15),
+          rgba(0, 0, 0, 0)
+        );
+        margin: 40px 0;
+      }
+      h2 {
+        color: #34495e;
+        margin-top: 30px;
+        font-size: 1.8em;
+      }
+      .payment-options-wrapper {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap; /* Allows wrapping on smaller screens */
+        gap: 30px; /* Space between payment options */
+        margin-top: 30px;
+      }
+      .payment-option {
+        flex: 0 0 calc(33% - 30px); /* Adjust width for 3 items per row */
+        min-width: 250px; /* Minimum width for each box */
+        background-color: #f9f9f9;
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+        padding: 25px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+      .payment-option:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      }
+      .payment-option img {
+        width: 150px;
+        height: 150px;
+        display: block;
+        margin: 15px auto 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+      .paypal-btn {
+        background-color: #0070ba;
+        color: white;
+        padding: 12px 25px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        display: inline-block; /* Changed to inline-block for flex */
+        margin-top: 15px;
+        transition: background-color 0.3s ease;
+      }
+      .paypal-btn:hover {
+        background-color: #0056b3;
+      }
+      .paypal-btn .fab {
+        margin-right: 8px;
+      }
+      .payment-option h3 .fab {
+        margin-right: 8px;
+      }
+      .footer-text {
+        margin-top: 50px;
+        font-size: 0.9em;
+        color: #777;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .payment-option {
+          flex: 0 0 calc(50% - 30px); /* 2 items per row on tablets */
+        }
+        .header {
+          position: static; /* Remove absolute positioning on smaller screens */
+          justify-content: center;
+          margin-bottom: 20px;
+        }
+      }
+      @media (max-width: 480px) {
+        .payment-option {
+          flex: 0 0 100%; /* 1 item per row on mobile */
+        }
+        h1 {
+          font-size: 2em;
+        }
+        h2 {
+          font-size: 1.5em;
+        }
+        .language-toggle {
+          margin-top: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <button class="language-toggle" id="languageToggle" data-lang="en">
+          中文
+        </button>
+      </div>
+
+      <h1 id="mainTitle">💖 Thank You for Supporting Ethan St. Lee 💖</h1>
+      <p id="introText">
+        Your generous support is the biggest motivation for me to continue
+        maintaining and developing my projects!
+      </p>
+
+      <hr />
+
+      <h2 id="internationalSupportTitle">International Support (PayPal)</h2>
+      <div class="payment-options-wrapper">
+        <div class="payment-option">
+          <p id="paypalDesc">
+            Quickly donate via PayPal, supporting credit cards or PayPal
+            balance.
+          </p>
+          <a
+            href="https://paypal.me/ethanstlee"
+            target="_blank"
+            class="paypal-btn"
+            id="paypalBtnText"
+            ><i class="fab fa-paypal"></i> Donate via PayPal</a
+          >
+        </div>
+      </div>
+
+      <hr />
+
+      <h2 id="domesticSupportTitle">Domestic Support (Scan to Pay)</h2>
+      <div class="payment-options-wrapper">
+        <div class="payment-option">
+          <h3 id="alipayTitle"><i class="fab fa-alipay"></i> Alipay</h3>
+          <img src="assets/alipay_qr.jpg" alt="Alipay QR Code" />
+          <p id="alipayDesc">Scan with Alipay App</p>
+        </div>
+
+        <div class="payment-option" id="wechatPayOption">
+          <h3 id="wechatPayTitle"><i class="fab fa-weixin"></i> WeChat Pay</h3>
+          <img src="assets/wechatpay_qr.jpg" alt="WeChat Pay QR Code" />
+          <p id="wechatPayDesc">Scan with WeChat App</p>
+        </div>
+      </div>
+
+      <hr />
+
+      <p class="footer-text" id="contactText">
+        If you have any questions, feel free to contact me!
+      </p>
+    </div>
+
+    <script>
+      const langData = {
+        en: {
+          pageTitle: "Support Ethan's Open Source Projects",
+          toggleButton: "中文",
+          mainTitle: "💖 Thank You for Supporting \n Ethan St. Lee 💖",
+          introText:
+            "Your generous support is the biggest motivation for me to continue maintaining and developing my projects!",
+          internationalSupportTitle: "International Support (PayPal)",
+          paypalDesc:
+            "Quickly donate via PayPal, supporting credit cards or PayPal balance.",
+          paypalBtnText: '<i class="fab fa-paypal"></i> Donate via PayPal',
+          domesticSupportTitle: "Domestic Support (Scan to Pay)",
+          alipayTitle: '<i class="fab fa-alipay"></i> Alipay',
+          alipayDesc: "Scan with Alipay App",
+          wechatPayTitle: '<i class="fab fa-weixin"></i> WeChat Pay',
+          wechatPayDesc: "Scan with WeChat App",
+          contactText: "If you have any questions, feel free to contact me!",
+        },
+        zh: {
+          pageTitle: "支持 Ethan 的开源项目",
+          toggleButton: "English",
+          mainTitle: "💖 感谢您对 Ethan 开源项目的支持 💖",
+          introText: "您的慷慨支持是我持续维护和开发项目的最大动力！",
+          internationalSupportTitle: "国际支持 (PayPal)",
+          paypalDesc: "通过 PayPal 快速打赏，支持信用卡或 PayPal 余额。",
+          paypalBtnText: '<i class="fab fa-paypal"></i> 前往 PayPal 打赏',
+          domesticSupportTitle: "国内支持 (扫码支付)",
+          alipayTitle: '<i class="fab fa-alipay"></i> 支付宝',
+          alipayDesc: "使用支付宝 App 扫描",
+          wechatPayTitle: '<i class="fab fa-weixin"></i> 微信支付',
+          wechatPayDesc: "使用微信 App 扫描",
+          contactText: "有任何问题，欢迎随时联系我！",
+        },
+      };
+
+      const languageToggle = document.getElementById("languageToggle");
+      let currentLang = languageToggle.dataset.lang; // 'en' by default
+
+      function updateContent(lang) {
+        document.getElementById("pageTitle").textContent =
+          langData[lang].pageTitle;
+        languageToggle.textContent = langData[lang].toggleButton;
+        document.getElementById("mainTitle").textContent =
+          langData[lang].mainTitle;
+        document.getElementById("introText").textContent =
+          langData[lang].introText;
+        document.getElementById("internationalSupportTitle").textContent =
+          langData[lang].internationalSupportTitle;
+        document.getElementById("paypalDesc").textContent =
+          langData[lang].paypalDesc;
+        document.getElementById("paypalBtnText").innerHTML =
+          langData[lang].paypalBtnText;
+        document.getElementById("domesticSupportTitle").textContent =
+          langData[lang].domesticSupportTitle;
+        document.getElementById("alipayTitle").innerHTML =
+          langData[lang].alipayTitle;
+        document.getElementById("alipayDesc").textContent =
+          langData[lang].alipayDesc;
+
+        // Optional: Update WeChat Pay if it exists
+        const wechatPayOption = document.getElementById("wechatPayOption");
+        if (wechatPayOption) {
+          document.getElementById("wechatPayTitle").innerHTML =
+            langData[lang].wechatPayTitle;
+          document.getElementById("wechatPayDesc").textContent =
+            langData[lang].wechatPayDesc;
+        }
+
+        document.getElementById("contactText").textContent =
+          langData[lang].contactText;
+
+        // Update document lang attribute
+        document.documentElement.lang = lang;
+      }
+
+      languageToggle.addEventListener("click", () => {
+        currentLang = currentLang === "en" ? "zh" : "en";
+        languageToggle.dataset.lang = currentLang; // Update data attribute
+        updateContent(currentLang);
+      });
+
+      // Initial content load (ensure 'en' is set if HTML defaults to it)
+      updateContent(currentLang);
+
+      // Optional: Hide WeChat Pay section if image source is empty
+      const wechatImgSrc = document
+        .querySelector("#wechatPayOption img")
+        ?.getAttribute("src");
+      if (
+        !wechatImgSrc ||
+        wechatImgSrc.includes("【替换成您的微信支付二维码图片链接】")
+      ) {
+        document.getElementById("wechatPayOption").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
