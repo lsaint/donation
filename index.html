@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title id="pageTitle">Support Ethan's Open Source Projects</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <style>
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -94,25 +97,41 @@
         border: 1px solid #ddd;
         border-radius: 5px;
       }
-      .paypal-btn {
-        background-color: #0070ba;
-        color: white;
-        padding: 10px 20px;
+      .paypal-link {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         text-decoration: none;
-        border-radius: 5px;
-        font-weight: bold;
-        display: inline-block;
-        margin-top: 10px;
-        transition: background-color 0.3s ease;
+        color: inherit;
       }
-      .paypal-btn:hover {
-        background-color: #0056b3;
+      .paypal-link p {
+        color: #555;
       }
-      .paypal-btn .fab {
-        margin-right: 8px;
+      .large-paypal-icon {
+        width: 120px;
+        height: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 5em; /* Adjusted font size to fit well within the 120x120px box */
+        color: #0070ba; /* PayPal blue */
+        margin: 10px auto; /* Center the large icon */
+        border: 1px solid #ddd; /* Add border */
+        border-radius: 5px; /* Add border-radius */
+      }
+      .payment-option h3 {
+        margin-bottom: 0px; /* Standardize margin below title */
+      }
+      .payment-option h3 {
+        margin-bottom: 0px; /* User requested 0px margin below title */
       }
       .payment-option h3 .fab {
+        font-size: 1em; /* Unify icon size in titles */
         margin-right: 8px;
+      }
+      .payment-option p {
+        margin-top: 0px; /* Standardize margin above description text */
       }
       .footer-text {
         margin-top: 20px;
@@ -162,19 +181,15 @@
       </p>
 
       <div class="payment-options-wrapper">
-        <div class="payment-option">
-          <p id="paypalDesc">
-            Quickly donate via PayPal, supporting credit cards or PayPal
-            balance.
-          </p>
-          <a
-            href="https://paypal.me/ethanstlee"
-            target="_blank"
-            class="paypal-btn"
-            id="paypalBtnText"
-            ><i class="fab fa-paypal"></i> Donate via PayPal</a
-          >
-        </div>
+        <a
+          href="https://paypal.me/ethanstlee"
+          target="_blank"
+          class="payment-option paypal-link"
+        >
+          <h3 id="paypalTitle"><i class="fab fa-paypal"></i> PayPal</h3>
+          <i class="fab fa-paypal large-paypal-icon"></i>
+          <p id="paypalDesc">Donate via PayPal</p>
+        </a>
 
         <div class="payment-option">
           <h3 id="alipayTitle"><i class="fab fa-alipay"></i> Alipay</h3>
@@ -202,11 +217,8 @@
           mainTitle: "💖 Thank You for Supporting \n Ethan St. Lee 💖",
           introText:
             "Your generous support is the biggest motivation for me to continue maintaining and developing my projects!",
-          internationalSupportTitle: "International Support (PayPal)",
-          paypalDesc:
-            "Quickly donate via PayPal, supporting credit cards or PayPal balance.",
-          paypalBtnText: '<i class="fab fa-paypal"></i> Donate via PayPal',
-          domesticSupportTitle: "Domestic Support (Scan to Pay)",
+          paypalTitle: '<i class="fab fa-paypal"></i> PayPal',
+          paypalDesc: "Donate via PayPal",
           alipayTitle: '<i class="fab fa-alipay"></i> Alipay',
           alipayDesc: "Scan with Alipay App",
           wechatPayTitle: '<i class="fab fa-weixin"></i> WeChat Pay',
@@ -218,10 +230,8 @@
           toggleButton: "English",
           mainTitle: "💖 感谢您对 Ethan 开源项目的支持 💖",
           introText: "您的慷慨支持是我持续维护和开发项目的最大动力！",
-          internationalSupportTitle: "国际支持 (PayPal)",
-          paypalDesc: "通过 PayPal 快速打赏，支持信用卡或 PayPal 余额。",
-          paypalBtnText: '<i class="fab fa-paypal"></i> 前往 PayPal 打赏',
-          domesticSupportTitle: "国内支持 (扫码支付)",
+          paypalTitle: '<i class="fab fa-paypal"></i> PayPal',
+          paypalDesc: "点击使用 PayPal 打赏",
           alipayTitle: '<i class="fab fa-alipay"></i> 支付宝',
           alipayDesc: "使用支付宝 App 扫描",
           wechatPayTitle: '<i class="fab fa-weixin"></i> 微信支付',
@@ -241,10 +251,10 @@
           langData[lang].mainTitle;
         document.getElementById("introText").textContent =
           langData[lang].introText;
+        document.getElementById("paypalTitle").innerHTML =
+          langData[lang].paypalTitle;
         document.getElementById("paypalDesc").textContent =
           langData[lang].paypalDesc;
-        document.getElementById("paypalBtnText").innerHTML =
-          langData[lang].paypalBtnText;
         document.getElementById("alipayTitle").innerHTML =
           langData[lang].alipayTitle;
         document.getElementById("alipayDesc").textContent =
